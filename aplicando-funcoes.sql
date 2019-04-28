@@ -21,7 +21,7 @@ SELECT INITCAP(last_name) AS "Funcionário",
 ---Arredonde o número de meses para o número inteiro mais próximo.
 ---------------------------------------------------------------------------------------------------------------------------------------
 SELECT last_name AS "Funcionário",
-       TRUNC(MONTHS_BETWEEN(sysdate, hire_date)) AS "Meses trabalhadados" 
+       ROUND(MONTHS_BETWEEN(sysdate, hire_date)) AS "Meses trabalhadados" 
   FROM employees
 ORDER BY "Meses trabalhadados";
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -55,7 +55,41 @@ FROM employees;
 
 --- Continuar do exercicio 8
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+--Com a function DECODE, crie uma consulta que exiba o nível de todos os funcionários com base no valor da coluna JOB_ID. Use estes dados:
+--Cargo Nível
+--AD_PRES A
+--ST_MAN B
+--IT_PROG C
+--SA_REP D
+--ST_CLERK E
+--Nenhuma das opções anteriores 0.
+SELECT job_id AS "ID",
+DECODE (job_id, 'AD_PRES', 'A',
+                'ST_MAN', 'B',
+                'IT_PROG', 'C',
+                'SA_REP', 'D',
+                'ST_CLERK', 'E',
+                job_id, 0) AS "Cargo Nível" 
+FROM employees;
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+--Com a function CASE, crie uma consulta que exiba o nível de todos os funcionários com base no valor da coluna JOB_ID. Use estes dados:
+--Cargo Nível
+--AD_PRES A
+--ST_MAN B
+--IT_PROG C
+--SA_REP D
+--ST_CLERK E
+--Nenhuma das opções anteriores 0.
+SELECT job_id AS "ID",
+       CASE job_id WHEN 'AD_PRES' THEN 'A'
+                   WHEN 'ST_MAN' THEN 'B'
+                   WHEN 'IT_PROG' THEN 'C'
+                   WHEN 'SA_REP' THEN 'D'
+                   WHEN 'ST_CLERK' THEN 'E'
+       ELSE '0'
+       END "Nível Salarial"
+FROM employees;
 
 
 
