@@ -1,2 +1,2 @@
 # sql-dev
-Os resultados consultas SQL desenvolvida é baseado em uma base de dados no Oracle HR.
+Aplicando o conhecimento de SQL usando o Schema HR do banco de dados Oracle.
