@@ -45,15 +45,15 @@ SELECT last_name AS "Funcionário",
   FROM employees
 ORDER BY hire_date;
 ---------------------------------------------------------------------------------------------------------------------------------------
----Crie uma consulta que exiba os sobrenomes e as comissões dos funcionários. Se um funcionário não ganhar comissão, a informação "Sem Comissão" deverá ser exibida. Atribua o nome Comissão à coluna.
+---Crie uma consulta que exiba os sobrenomes e as comissões dos funcionários. Se um funcionário não ganhar comissão, a informação "Sem Comissão" deverá 
+---ser exibida. Atribua o nome Comissão à coluna.
 SELECT last_name,
        CASE
           WHEN commission_pct is null THEN 'Sem_comissão'
           ELSE 'Comissão'
        END "Comissão"
 FROM employees;
-
---- Continuar do exercicio 8
+---Exercicio 8 - tentar resolver
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 --Com a function DECODE, crie uma consulta que exiba o nível de todos os funcionários com base no valor da coluna JOB_ID. Use estes dados:
@@ -89,7 +89,7 @@ SELECT job_id AS "ID",
                    WHEN 'ST_CLERK' THEN 'E'
        ELSE '0'
        END "Nível Salarial"
-FROM employees;
+  FROM employees;
 
 
 
