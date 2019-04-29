@@ -19,7 +19,6 @@ SELECT INITCAP(last_name) AS "Funcionário",
 ---Crie um relatório com o tempo de emprego de cada funcionário. Para cada funcionário, exiba o sobrenome e calcule o número de meses entre hoje e a 
 ---data de admissão do funcionário. Atribua o nome MESES_TRABALHADOS à coluna. Ordene os resultados pelo número de meses em que o funcionário está empregado. 
 ---Arredonde o número de meses para o número inteiro mais próximo.
----------------------------------------------------------------------------------------------------------------------------------------
 SELECT last_name AS "Funcionário",
        ROUND(MONTHS_BETWEEN(sysdate, hire_date)) AS "Meses trabalhadados" 
   FROM employees
@@ -53,8 +52,6 @@ SELECT last_name,
           ELSE 'Comissão'
        END "Comissão"
 FROM employees;
----Exercicio 8 - tentar resolver
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 --Com a function DECODE, crie uma consulta que exiba o nível de todos os funcionários com base no valor da coluna JOB_ID. Use estes dados:
 --Cargo Nível
@@ -90,35 +87,3 @@ SELECT job_id AS "ID",
        ELSE '0'
        END "Nível Salarial"
   FROM employees;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
