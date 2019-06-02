@@ -53,3 +53,19 @@ SELECT e.department_id,
  WHERE e.employee_id <> c.employee_id
  ORDER BY e.department_id, e.last_name, c.last_name;
 
+--O departamento de recursos humanos precisa de um relatório sobre níveis de cargos e salários.
+--Para se familiarizar com a tabela JOBS, primeiro mostre a estrutura dessa tabela. 
+--Em seguida, crie uma consulta que exiba o nome, o cargo, o nome do departamento, o salário e o nível de todos os funcionários
+SELECT e.last_name,
+       j.job_title,
+       d.department_name,
+       j.min_salary,
+       e.salary,
+       j.max_salary
+  FROM employees e
+  JOIN jobs j
+    ON (e.job_id = j.job_id)
+  JOIN departments d
+    ON (e.department_id = d.department_id)
+ORDER BY e.salary DESC
+
